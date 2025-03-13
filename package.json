@@ -1,0 +1,21 @@
+{
+	"name": "balance_api",
+	"version": "1.0.0",
+	"main": "src/app.js",
+	"scripts": {
+		"start": "node src/app.js",
+		"i_start": "npm i && npm run start"
+	},
+	"author": "Misha Kirichenko",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.4.7",
+		"express": "^4.19.2",
+		"module-alias": "^2.2.3",
+		"npm": "^10.8.1",
+		"pg": "^8.12.0",
+		"pg-hstore": "^2.3.4",
+		"sequelize": "^6.37.3"
+	},
+	"type": "module"
+}

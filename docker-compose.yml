@@ -1,0 +1,40 @@
+services:
+  balance-api-db:
+    restart: on-failure
+    image: postgres
+    container_name: balance-api-db
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - balanceApiDB:/var/lib/postgresql/data
+    networks:
+      - balance-api-network
+    env_file:
+      - .env
+
+  balance-api:
+    build: .
+    container_name: balance-api
+    command: npm run i_start
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      PORT: ${PORT}
+      DB_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@balance-api-db:5432/${POSTGRES_DB}
+    depends_on:
+      - balance-api-db
+    networks:
+      - balance-api-network
+    restart: on-failure
+    env_file:
+      - .env
+
+volumes:
+  balanceApiDB:
+
+networks:
+  balance-api-network:
