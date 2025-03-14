@@ -24,7 +24,7 @@ services:
       - ${PORT}:${PORT}
     environment:
       PORT: ${PORT}
-      DB_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@balance-api-db:5432/${POSTGRES_DB}
+      DB_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
     depends_on:
       - balance-api-db
     networks:
