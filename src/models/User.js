@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import conn from "../config/conn.js";
 
 const User = conn.define(
-	"User",
+	"user",
 	{
 		id: {
 			type: DataTypes.INTEGER,
@@ -19,7 +19,7 @@ const User = conn.define(
 		}
 	},
 	{
-		timestamps: true
+		timestamps: false
 	}
 );
 
