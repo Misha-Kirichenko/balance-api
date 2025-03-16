@@ -8,7 +8,7 @@ The app is designed to handle a high volume of simultaneous requests, simulating
 
 ## Requirements
 
-- Node.js
+- Node.js (Express.js)
 - PostgreSQL
 - Sequelize ORM
 - Umzug (for migrations and seeders)
