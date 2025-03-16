@@ -48,7 +48,7 @@ Balance updates are performed in real-time without the use of queues or delayed 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/Misha-Kirichenko/balance-ap.git
 cd balance-api
 ```
 
